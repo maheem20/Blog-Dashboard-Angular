@@ -28,7 +28,8 @@ export class CategoriesComponent implements OnInit {
         console.log(docRef1);
 
         this.afs.collection('categories').doc(docRef.id).collection('subCategories').doc(docRef1.id).collection('subCategories').add(subCategoryData).then(docRef2 => {
-});
+          console.log('Second level sub category successfully added!');
+        });
       });
 
     }).catch((err: any) => {
