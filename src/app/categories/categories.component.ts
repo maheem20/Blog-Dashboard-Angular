@@ -19,5 +19,7 @@ export class CategoriesComponent implements OnInit {
     }
     this.afs.collection('categories').add(categoryData).then(docRef => {
       console.log(docRef);
-    })}
+    }).catch((err: any) => {
+      console.log(err)});
+    }
 }
