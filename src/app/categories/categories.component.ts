@@ -17,6 +17,6 @@ export class CategoriesComponent implements OnInit {
     let categoryData = {
       category: formData.value.category
     }
-    console.log(categoryData);
+    this.afs.collection('categories').add(categoryData);
     }
 }
