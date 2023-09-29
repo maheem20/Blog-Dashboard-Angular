@@ -17,8 +17,16 @@ export class CategoriesComponent implements OnInit {
     let categoryData = {
       category: formData.value.category
     }
+    let subCategoryData = {
+      subCategory: 'subCategory1'
+    }
+
     this.afs.collection('categories').add(categoryData).then(docRef => {
       console.log(docRef);
+
+      this.afs.collection('categories').doc(docRef.id).collection('subCategories').add(subCategoryData).then(docRef1 => {;
+      });
+
     }).catch((err: any) => {
       console.log(err)});
     }
