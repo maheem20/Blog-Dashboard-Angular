@@ -10,6 +10,9 @@ export class CategoriesComponent implements OnInit {
   }
   
   onSubmit(formData: any) {
-    console.log(formData.value);
+    let categoryData = {
+      category: formData.value.category
+    }
+    console.log(categoryData);
   }
 }
