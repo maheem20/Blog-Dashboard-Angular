@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-categories',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
+
+  constructor(private afs: AngularFirestore) { }
+
   ngOnInit(): void {;
   }
   
@@ -14,5 +18,5 @@ export class CategoriesComponent implements OnInit {
       category: formData.value.category
     }
     console.log(categoryData);
-  }
+    }
 }
