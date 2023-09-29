@@ -24,7 +24,8 @@ export class CategoriesComponent implements OnInit {
     this.afs.collection('categories').add(categoryData).then(docRef => {
       console.log(docRef);
 
-      this.afs.collection('categories').doc(docRef.id).collection('subCategories').add(subCategoryData).then(docRef1 => {;
+      this.afs.collection('categories').doc(docRef.id).collection('subCategories').add(subCategoryData).then(docRef1 => {
+        console.log(docRef1);
       });
 
     }).catch((err: any) => {
