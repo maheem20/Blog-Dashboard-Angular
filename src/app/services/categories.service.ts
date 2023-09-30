@@ -4,6 +4,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
+
+let subCategoryData = {
+  subCategory: 'subCategory1'
+}
 export class CategoriesService {
 
   constructor(private afs: AngularFirestore) { }
