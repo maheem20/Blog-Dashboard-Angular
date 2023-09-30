@@ -8,8 +8,8 @@ export class CategoriesService {
 
   constructor(private afs: AngularFirestore) { }
 
-  saveData() {
-    this.afs.collection('categories').add(categoryData).then((docRef: { id: any; }) => {
+  saveData(data: any) {
+    this.afs.collection('categories').add(data).then((docRef: { id: any; }) => {
       console.log(docRef);
 
       // this.afs.doc(`categories/${docRef.id}`).collection('subCategories').add(subCategoryData)
