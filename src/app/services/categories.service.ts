@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 
 export class CategoriesService {
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, private toastr: ToastrService) { }
 
   saveData(data: any) {
     this.afs.collection('categories').add(data).then((docRef: { id: any; }) => {
