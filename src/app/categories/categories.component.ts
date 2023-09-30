@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from '../services/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
   }
@@ -16,8 +17,7 @@ export class CategoriesComponent implements OnInit {
     let categoryData = {
       category: formData.value.category
     }
-    let subCategoryData = {
-      subCategory: 'subCategory1'
-    }
+
+    this.categoriesService.saveData(categoryData);
   }
 }
