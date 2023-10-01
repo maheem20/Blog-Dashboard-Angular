@@ -11,6 +11,7 @@ export class CategoriesComponent implements OnInit {
 
   categoryArray: Array<object> | undefined;
   formCategory: string = '';
+  formStatus: string = 'Add';
 
   constructor(private categoriesService: CategoriesService) { }
 
@@ -32,5 +33,6 @@ export class CategoriesComponent implements OnInit {
 
   onEdit(category: any) {
     this.formCategory = category.category;
+    this.formStatus = 'Edit';
   }
 }
