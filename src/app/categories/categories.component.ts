@@ -26,5 +26,6 @@ export class CategoriesComponent implements OnInit {
     }
 
     this.categoriesService.saveData(categoryData);
+    formData.reset();
   }
 }
