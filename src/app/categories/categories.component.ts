@@ -12,6 +12,9 @@ export class CategoriesComponent implements OnInit {
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
+    this.categoriesService.loadData().subscribe(val => {
+      console.log(val);
+    });
   }
 
   onSubmit(formData: any) {
