@@ -23,7 +23,10 @@ export class CategoriesService {
   loadData() {
     return this.afs.collection('categories').snapshotChanges().pipe(
       map(actions => {
-        return actions
+        return actions.map(a => {
+          const data: any = a.payload.doc.data();
+          const id = a.payload.doc.id;
+        });
       })
     );
   }
