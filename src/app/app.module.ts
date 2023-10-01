@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule, provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule, } from '@angular/fire/compat/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
