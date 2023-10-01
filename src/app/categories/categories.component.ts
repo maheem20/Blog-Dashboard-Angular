@@ -9,6 +9,8 @@ import { Category } from '../models/category';
 })
 export class CategoriesComponent implements OnInit {
 
+  categoryArray: Array<object> | undefined;
+
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
