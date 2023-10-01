@@ -16,6 +16,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
     this.categoriesService.loadData().subscribe(val => {
       console.log(val);
+      this.categoryArray = val;
     });
   }
 
