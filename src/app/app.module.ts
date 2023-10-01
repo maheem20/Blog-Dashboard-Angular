@@ -32,7 +32,7 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
