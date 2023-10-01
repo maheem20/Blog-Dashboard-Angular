@@ -20,5 +20,7 @@ export class CategoriesService {
     });
   }
 
-  loadData() { }
+  loadData() {
+    return this.afs.collection('categories').snapshotChanges()
+  }
 }
