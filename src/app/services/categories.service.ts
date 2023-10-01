@@ -13,6 +13,7 @@ export class CategoriesService {
   saveData(data: any) {
     this.afs.collection('categories').add(data).then((docRef: { id: any; }) => {
       console.log(docRef);
+      this.toastr.success('Category added successfully!');
     }).catch((err: any) => {
       console.log(err)
     });
