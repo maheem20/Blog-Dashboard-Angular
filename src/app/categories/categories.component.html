@@ -12,7 +12,7 @@
                     class="form-control shadow-effect"
                     placeholder="Add New Categories"
                     #newCategory = "ngModel"
-                    ngModel
+                    [ngModel] = "formCategory"
                     required
                     [ngClass] = "{'is-invalid' : newCategory.touched && newCategory.invalid}"
                     >
