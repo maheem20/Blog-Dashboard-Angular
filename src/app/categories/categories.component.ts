@@ -10,6 +10,7 @@ import { Category } from '../models/category';
 export class CategoriesComponent implements OnInit {
 
   categoryArray: Array<object> | undefined;
+  formCategory: string = '';
 
   constructor(private categoriesService: CategoriesService) { }
 
@@ -27,5 +28,9 @@ export class CategoriesComponent implements OnInit {
 
     this.categoriesService.saveData(categoryData);
     formData.reset();
+  }
+
+  onEdit(category: any) {
+    this.formCategory = category.category;
   }
 }
