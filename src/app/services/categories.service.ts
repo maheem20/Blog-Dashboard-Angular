@@ -21,6 +21,10 @@ export class CategoriesService {
   }
 
   loadData() {
-    return this.afs.collection('categories').snapshotChanges()
+    return this.afs.collection('categories').snapshotChanges().pipe(
+      map(actions => {
+        return actions
+      })
+    );
   }
 }
