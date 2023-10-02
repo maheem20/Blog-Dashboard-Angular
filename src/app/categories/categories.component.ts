@@ -12,6 +12,7 @@ export class CategoriesComponent implements OnInit {
   categoryArray: Array<object> | undefined;
   formCategory: string = '';
   formStatus: string = 'Add';
+  categoryId: string = '';
 
   constructor(private categoriesService: CategoriesService) { }
 
@@ -27,12 +28,13 @@ export class CategoriesComponent implements OnInit {
       category: formData.value.category
     }
 
-    this.categoriesService.saveData(categoryData);
-    formData.reset();
-  }
+      this.categoriesService.saveData(categoryData);
+      formData.reset();
+    }
 
-  onEdit(category: any) {
+  onEdit(category: any, id: any) {
     this.formCategory = category.category;
     this.formStatus = 'Edit';
+    this.categoryId = id;
   }
 }
