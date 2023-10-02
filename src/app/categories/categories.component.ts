@@ -32,6 +32,11 @@ export class CategoriesComponent implements OnInit {
       this.categoriesService.saveData(categoryData);
       formData.reset();
     }
+    else if (this.formStatus == 'Edit') {
+      this.categoriesService.updateData(this.categoryId, categoryData);
+      formData.reset();
+      this.formStatus = 'Add';
+    }
   }
 
   onEdit(category: any, id: any) {
