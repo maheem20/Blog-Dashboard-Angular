@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { AllPostComponent } from './posts/all-post/all-post.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AllPostComponent
   ],
   imports: [
     BrowserModule,
