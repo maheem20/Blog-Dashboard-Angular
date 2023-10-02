@@ -33,13 +33,13 @@ export class CategoriesService {
   }
 
   updateData(id: any, EditData: any) {
-    this.afs.collection('categories').doc(id).update(EditData).then(docRef => {
+    this.afs.doc(`categories/${id}`).update(EditData).then(docRef => {
       this.toastr.success('Category updated successfully!');
     })
   }
 
   deleteData(id: any) {
-    this.afs.collection('categories').doc(id).delete().then(docRef => {
+    this.afs.doc(`categories/${id}`).delete().then(docRef => {
       this.toastr.success('Category deleted successfully!');
     })
   }
