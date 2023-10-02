@@ -37,4 +37,10 @@ export class CategoriesService {
       this.toastr.success('Category updated successfully!');
     })
   }
+
+  deleteData(id: any) {
+    this.afs.collection('categories').doc(id).delete().then(docRef => {
+      this.toastr.success('Category deleted successfully!');
+    })
+  }
 }
