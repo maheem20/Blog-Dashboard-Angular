@@ -14,6 +14,8 @@ export class NewPostComponent {
     const title = $event.target.value;
     this.permalink = title.replace(/\s/g, '-');
   }
-showPreview($event: any) { }
+showPreview($event: any) {
+    const reader = new FileReader();
+  }
   
 }
