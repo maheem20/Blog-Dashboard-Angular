@@ -8,9 +8,12 @@ import { Component } from '@angular/core';
 export class NewPostComponent {
   permalink: string = '';
   imgSrc: string = './assets/images/placeholder-image.jpeg';
+  selectedImg: any;
 
   onTitleChanged($event: any) {
     const title = $event.target.value;
     this.permalink = title.replace(/\s/g, '-');
   }
+showPreview($event: any) { }
+  
 }
