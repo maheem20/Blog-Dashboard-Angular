@@ -11,10 +11,13 @@ export class NewPostComponent {
   imgSrc: string = './assets/images/placeholder-image.jpeg';
   selectedImg: any;
 
+  categories: Array<any> = [];
+
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
     this.categoriesService.loadData().subscribe((val: any[]) => {
+      this.categories = val;
     });
   }
 
