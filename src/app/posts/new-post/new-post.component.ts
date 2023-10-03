@@ -17,6 +17,7 @@ export class NewPostComponent {
 showPreview($event: any) {
     const reader = new FileReader();
     reader.onload = (e: any) => {
+      this.imgSrc = e.target.result;
     };
   }
   
