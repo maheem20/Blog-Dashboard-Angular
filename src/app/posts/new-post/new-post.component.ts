@@ -19,6 +19,7 @@ showPreview($event: any) {
     reader.onload = (e: any) => {
       this.imgSrc = e.target.result;
     };
+    reader.readAsDataURL($event.target.files[0]);
   }
   
 }
