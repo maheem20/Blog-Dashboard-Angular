@@ -20,6 +20,7 @@ showPreview($event: any) {
       this.imgSrc = e.target.result;
     };
     reader.readAsDataURL($event.target.files[0]);
+    this.selectedImg = $event.target.files[0];
   }
   
 }
