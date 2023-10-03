@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-new-post',
@@ -10,11 +11,13 @@ export class NewPostComponent {
   imgSrc: string = './assets/images/placeholder-image.jpeg';
   selectedImg: any;
 
+  constructor(private categoriesService: CategoriesService) { }
+
   onTitleChanged($event: any) {
     const title = $event.target.value;
     this.permalink = title.replace(/\s/g, '-');
   }
-showPreview($event: any) {
+  showPreview($event: any) {
     const reader = new FileReader();
     reader.onload = (e: any) => {
       this.imgSrc = e.target.result;
@@ -22,5 +25,5 @@ showPreview($event: any) {
     reader.readAsDataURL($event.target.files[0]);
     this.selectedImg = $event.target.files[0];
   }
-  
+
 }
