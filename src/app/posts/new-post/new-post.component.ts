@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NewPostComponent {
 
-  onTitleChange($event: any) { }
+  onTitleChange($event: any) {
+    const title = $event.target.value;
+  }
 }
