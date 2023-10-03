@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class NewPostComponent {
 
+  onTitleChange($event: any) { }
 }
