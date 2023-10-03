@@ -13,6 +13,11 @@ export class NewPostComponent {
 
   constructor(private categoriesService: CategoriesService) { }
 
+  ngOnInit(): void {
+    this.categoriesService.loadData().subscribe((val: any[]) => {
+    });
+  }
+
   onTitleChanged($event: any) {
     const title = $event.target.value;
     this.permalink = title.replace(/\s/g, '-');
