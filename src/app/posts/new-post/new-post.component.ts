@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NewPostComponent {
   permalink: string = '';
+  imgSrc: string = './assets/images/placeholder-image.jpeg';
 
   onTitleChanged($event: any) {
     const title = $event.target.value;
