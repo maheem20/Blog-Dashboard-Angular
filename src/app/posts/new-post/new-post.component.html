@@ -57,7 +57,18 @@
                             rows="10"
                             class="form-control"
                             formControlName="excerpt"
+                            [ngClass]="{is-invalid: fc.excerpt.touched && fc.excerpt.invalid}"
                             ></textarea>
+                            <div **ngIf="fc.excerpt.errors?.required">
+                                <div class="alert alert-danger" **ngIf="fc.excerpt.touched && fc.excerpt.invalid">
+                                    Excerpt is required
+                                </div>
+                            </div>
+                            <div **ngIf="fc.excerpt.errors?.required">
+                                <div class="alert alert-danger" **ngIf="fc.excerpt.touched && fc.excerpt.invalid">
+                                    Excerpt must be at least 50 characters long
+                                </div>
+                            </div>
                         </div>
 
                     </div>
