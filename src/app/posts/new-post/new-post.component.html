@@ -42,7 +42,13 @@
                                 name="permalink"
                                 disabled
                                 formControlName="permalink"
+                                [ngClass]="{is-invalid: fc.permalink.touched && fc.permalink.invalid}"
                                 >
+                            <div **ngIf="fc.permalink.errors?.required">
+                                <div class="alert alert-danger" **ngIf="fc.permalink.touched && fc.permalink.invalid">
+                                    Permalink is required
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Excerpt</label>
