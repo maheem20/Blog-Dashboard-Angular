@@ -122,6 +122,11 @@
                         <div class="form-group">
                             <label for="">Content</label>
                             <angular-editor placeholder = "Add your content here" formControlName="content"></angular-editor>
+                            <div **ngIf="fc.content.errors?.required">
+                                <div class="alert alert-danger" **ngIf="fc.content.touched && fc.content.invalid">
+                                    Content is required
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
