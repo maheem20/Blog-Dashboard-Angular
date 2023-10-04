@@ -20,6 +20,7 @@
                                 class="form-control"
                                 (keyup)="onTitleChanged($event)"
                                 formControlName="title"
+                                [ngClass]="{is-invalid: fc.title.touched && fc.title.invalid}"
                                 >
                             <div **ngIf="fc.title.errors?.required">
                                 <div class="alert alert-danger" **ngIf="fc.title.touched && fc.title.invalid">
