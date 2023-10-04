@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from '../../services/categories.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-post',
@@ -18,12 +18,12 @@ export class NewPostComponent {
 
   constructor(private categoriesService: CategoriesService, private fb: FormBuilder) {
     this.postForm = this.fb.group({
-      title: [''],
-      permalink: [''],
-      excerpt: [''],
-      category: [''],
-      postImg: [''],
-      content: ['']
+      title: ['', [Validators.required, Validators.minLength(10)]],
+      permalink: ['', Validators.required],
+      excerpt: ['', [Validators.required, Validators.minLength(50)]],
+      category: ['', Validators.required],
+      postImg: ['', Validators.required],
+      content: ['', Validators.required]
     });
   }
 
