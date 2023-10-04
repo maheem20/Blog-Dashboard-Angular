@@ -33,6 +33,10 @@ export class NewPostComponent {
     });
   }
 
+  get fc() {
+    return this.postForm!.controls;
+  }
+
   onTitleChanged($event: any) {
     const title = $event.target.value;
     this.permalink = title.replace(/\s/g, '-');
