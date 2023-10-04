@@ -17,7 +17,14 @@ export class NewPostComponent {
   postForm: FormGroup | undefined
 
   constructor(private categoriesService: CategoriesService, private fb: FormBuilder) {
-    this.postForm = this.fb.group({ });
+    this.postForm = this.fb.group({
+      title: [''],
+      permalink: [''],
+      excerpt: [''],
+      category: [''],
+      postImg: [''],
+      content: ['']
+    });
   }
 
   ngOnInit(): void {
