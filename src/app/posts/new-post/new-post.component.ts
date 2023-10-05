@@ -76,7 +76,7 @@ export class NewPostComponent {
       createdAt: new Date()
     };
 
-    this.postService.uploadImage(this.selectedImg);
+    this.postService.uploadImage(this.selectedImg, postData);
   }
 
 }
