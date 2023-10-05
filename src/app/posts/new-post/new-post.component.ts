@@ -52,13 +52,16 @@ export class NewPostComponent {
   }
 
   onSubmit() {
-    console.log(this.postForm!.value);
+
+    let splitted = this.postForm!.value.category.split('-');
+    console.log(splitted);
+
     const postData: Post = {
       title: this.postForm!.value.title,
       permalink: this.postForm!.value.permalink,
       category: {
-        categoryId: '',
-        categoryName: ''
+        categoryId: splitted[0],
+        categoryName: splitted[1]
       },
       postImgPath: '',
       excerpt: this.postForm!.value.excerpt,
@@ -68,6 +71,8 @@ export class NewPostComponent {
       status: 'new',
       createdAt: new Date()
     };
+
+    console.log(this.postForm!.value);
   }
 
 }
