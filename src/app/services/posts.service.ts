@@ -16,7 +16,7 @@ export class PostsService {
       console.log('Post image uploaded successfully!');
 
       this.storage.ref(filePath).getDownloadURL().subscribe(URL => {
-        console.log(URL);
+        postData.postImgPath = URL;
         console.log(postData);
       });
     });
