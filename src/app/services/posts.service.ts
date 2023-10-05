@@ -22,6 +22,8 @@ export class PostsService {
       this.storage.ref(filePath).getDownloadURL().subscribe(URL => {
         postData.postImgPath = URL;
         console.log(postData);
+
+        this.afs.collection('posts').add(postData).then((docRef: { id: any; }) => { })
       });
     });
   }
