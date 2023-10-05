@@ -8,5 +8,8 @@ export class PostsService {
 
   constructor(private storage: AngularFireStorage) { }
 
-  uploadImage(selectedImage: any) { }
+  uploadImage(selectedImage: any) {
+    const filePath = `postIMG/${Date.now()}`;
+    console.log(filePath);
+  }
 }
