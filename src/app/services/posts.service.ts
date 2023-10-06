@@ -40,7 +40,10 @@ export class PostsService {
   loadData() {
     return this.afs.collection('posts').snapshotChanges().pipe(
       map(actions => {
-        return actions.map(a => { });
+        return actions.map(a => {
+          const data: any = a.payload.doc.data();
+          const id = a.payload.doc.id;
+        });
       })
     );
   }
