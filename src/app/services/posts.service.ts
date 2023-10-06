@@ -36,6 +36,8 @@ export class PostsService {
     });
   }
 
-  loadData() { }
-
+  loadData() {
+    return this.afs.collection('posts').snapshotChanges();
+  }
+  
 }
