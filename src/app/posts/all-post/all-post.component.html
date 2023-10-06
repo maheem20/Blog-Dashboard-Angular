@@ -38,7 +38,7 @@
                                 <td> {{ post.data.title }} </td>
                                 <td> {{ post.data.excerpt }} </td>
                                 <td> {{ post.data.category.category }} </td>
-                                <td> {{ post.data.createdAt }} </td>
+                                <td> {{ post.data.createdAt.toMillis() }} </td>
                                 <td></td>
                             </tr>
                         </tbody>
