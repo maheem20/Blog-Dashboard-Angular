@@ -8,6 +8,8 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class AllPostComponent {
 
+  postArray: Array<Object> = [];
+
   constructor(private postService: PostsService) { }
 
   ngOnInit(): void {
