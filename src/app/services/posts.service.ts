@@ -35,4 +35,7 @@ export class PostsService {
       this.toastr.success('Post added successfully!');
     });
   }
+
+  loadData() { }
+
 }
