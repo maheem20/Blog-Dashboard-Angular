@@ -78,6 +78,7 @@ export class NewPostComponent {
 
     this.postService.uploadImage(this.selectedImg, postData);
     this.postForm!.reset();
+    this.imgSrc = './assets/placeholder-image.jpeg';
   }
 
 }
