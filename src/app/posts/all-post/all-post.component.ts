@@ -10,4 +10,12 @@ export class AllPostComponent {
 
   constructor(private postService: PostsService) { }
 
+  ngOnInit(): void {
+
+    this.postService.loadData().subscribe(val => {
+      console.log(val);
+    });
+
+  }
+
 }
