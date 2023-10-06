@@ -77,6 +77,7 @@ export class NewPostComponent {
     };
 
     this.postService.uploadImage(this.selectedImg, postData);
+    this.postForm!.reset();
   }
 
 }
