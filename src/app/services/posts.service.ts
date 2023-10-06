@@ -25,10 +25,14 @@ export class PostsService {
         postData.postImgPath = URL;
         console.log(postData);
 
-        this.afs.collection('posts').add(postData).then((docRef: { id: any; }) => {
-          this.toastr.success('Post added successfully!');
-        })
+        this.saveData(postData);
       });
+    });
+  }
+
+  saveData(postData: any) {
+    this.afs.collection('posts').add(postData).then((docRef: { id: any; }) => {
+      this.toastr.success('Post added successfully!');
     });
   }
 }
