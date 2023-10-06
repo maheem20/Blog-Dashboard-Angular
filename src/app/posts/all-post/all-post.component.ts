@@ -16,6 +16,7 @@ export class AllPostComponent {
 
     this.postService.loadData().subscribe(val => {
       console.log(val);
+      this.postArray = val;
     });
 
   }
