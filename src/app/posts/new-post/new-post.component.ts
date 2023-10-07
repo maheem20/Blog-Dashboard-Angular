@@ -41,6 +41,8 @@ export class NewPostComponent {
             content: [this.post.content, Validators.required]
           });
 
+          this.imgSrc = this.post.postImgPath;
+
         });
 
       });
