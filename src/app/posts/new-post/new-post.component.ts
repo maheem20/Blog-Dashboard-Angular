@@ -30,6 +30,8 @@ export class NewPostComponent {
         
         this.postService.loadOneData(val.id).subscribe(post => {
 
+          this.post = post;
+
         });
 
       });
