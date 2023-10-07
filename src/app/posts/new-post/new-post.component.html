@@ -20,7 +20,7 @@
                                 class="form-control"
                                 (keyup)="onTitleChanged($event)"
                                 formControlName="title"
-                                [ngClass]="{is-invalid: fc.title.touched && fc.title.invalid}"
+                                [ngClass]="{'is-invalid': fc.title.touched && fc.title.invalid}"
                                 >
                             <div **ngIf="fc.title.errors?.required">
                                 <div class="alert alert-danger" **ngIf="fc.title.touched && fc.title.invalid">
@@ -42,7 +42,7 @@
                                 name="permalink"
                                 disabled
                                 formControlName="permalink"
-                                [ngClass]="{is-invalid: fc.permalink.touched && fc.permalink.invalid}"
+                                [ngClass]="{'is-invalid': fc.permalink.touched && fc.permalink.invalid}"
                                 >
                             <div **ngIf="fc.permalink.errors?.required">
                                 <div class="alert alert-danger" **ngIf="fc.permalink.touched && fc.permalink.invalid">
@@ -57,7 +57,7 @@
                             rows="10"
                             class="form-control"
                             formControlName="excerpt"
-                            [ngClass]="{is-invalid: fc.excerpt.touched && fc.excerpt.invalid}"
+                            [ngClass]="{'is-invalid': fc.excerpt.touched && fc.excerpt.invalid}"
                             ></textarea>
                             <div **ngIf="fc.excerpt.errors?.required">
                                 <div class="alert alert-danger" **ngIf="fc.excerpt.touched && fc.excerpt.invalid">
@@ -81,7 +81,7 @@
                     <select
                         class="form-control"
                         formControlName="category"
-                        [ngClass]="{is-invalid: fc.category.touched && fc.category.invalid}"
+                        [ngClass]="{'is-invalid': fc.category.touched && fc.category.invalid}"
                         >
                         <option value="" disabled>Please select a category</option>
                         <option *ngFor="let category of categories" value="{{category.id}}-{{ category.data.category }}">{{ category.data.category }}</option>
@@ -102,7 +102,7 @@
                         accept="image/*"
                         (change)="showPreview($event)"
                         formControlName="postImg"
-                        [ngClass]="{is-invalid: fc.postImg.touched && fc.postImg.invalid}"
+                        [ngClass]="{'is-invalid': fc.postImg.touched && fc.postImg.invalid}"
                         >
                     <div **ngIf="fc.postImg.errors?.required">
                         <div class="alert alert-danger" **ngIf="fc.postImg.touched && fc.postImg.invalid">
