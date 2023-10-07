@@ -31,6 +31,15 @@ export class NewPostComponent {
         this.postService.loadOneData(val.id).subscribe(post => {
 
           this.post = post;
+          
+          this.postForm = this.fb.group({
+            title: [this.post.title, [Validators.required, Validators.minLength(10)]],
+            permalink: [this.post.permalink, Validators.required],
+            excerpt: [this.post.excerpt, [Validators.required, Validators.minLength(50)]],
+            category: [this.post.category.categoryId, Validators.required],
+            postImg: ['', Validators.required],
+            content: [this.post.content, Validators.required]
+          });
 
         });
 
