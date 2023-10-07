@@ -12,7 +12,8 @@ export class PostsService {
   constructor(
     private storage: AngularFireStorage,
     private afs: AngularFirestore,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) { }
 
   uploadImage(selectedImage: any, postData: any) {
