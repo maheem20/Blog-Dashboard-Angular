@@ -26,6 +26,10 @@ export class NewPostComponent {
     private router: ActivatedRoute
     ) {
 
+      this.router.queryParams.subscribe(val => {
+        console.log(val);
+      });
+
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(10)]],
       permalink: ['', Validators.required],
