@@ -36,7 +36,7 @@ export class NewPostComponent {
             title: [this.post.title, [Validators.required, Validators.minLength(10)]],
             permalink: [this.post.permalink, Validators.required],
             excerpt: [this.post.excerpt, [Validators.required, Validators.minLength(50)]],
-            category: [this.post.category.categoryId, Validators.required],
+            category: [`${this.post.category.categoryId}-${this.post.category.category}`, Validators.required],
             postImg: ['', Validators.required],
             content: [this.post.content, Validators.required]
           });
