@@ -27,7 +27,11 @@ export class NewPostComponent {
     ) {
 
       this.router.queryParams.subscribe(val => {
-        console.log(val);
+        
+        this.postService.loadOneData(val.id).subscribe(post => {
+
+        });
+
       });
 
     this.postForm = this.fb.group({
