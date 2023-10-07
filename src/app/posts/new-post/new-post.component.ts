@@ -65,7 +65,7 @@ export class NewPostComponent {
       permalink: this.postForm.value.permalink,
       category: {
         categoryId: splitted[0],
-        categoryName: splitted[1]
+        category: splitted[1]
       },
       postImgPath: '',
       excerpt: this.postForm.value.excerpt,
