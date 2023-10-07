@@ -50,5 +50,9 @@ export class PostsService {
       })
     );
   }
+
+  loadOneData(id: any) {
+    return this.afs.collection(`posts/${id}`).doc(id).valueChanges();
+  }
   
 }
