@@ -3,6 +3,7 @@ import { CategoriesService } from '../../services/categories.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Post } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-new-post',
@@ -21,7 +22,10 @@ export class NewPostComponent {
   constructor(
     private categoriesService: CategoriesService,
     private fb: FormBuilder,
-    private postService: PostsService) {
+    private postService: PostsService,
+    private router: ActivatedRoute
+    ) {
+
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(10)]],
       permalink: ['', Validators.required],
