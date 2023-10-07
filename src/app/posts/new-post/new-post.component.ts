@@ -16,7 +16,7 @@ export class NewPostComponent {
 
   categories: Array<any> = [];
 
-  postForm: FormGroup | undefined
+  postForm: FormGroup
 
   constructor(
     private categoriesService: CategoriesService,
@@ -39,7 +39,7 @@ export class NewPostComponent {
   }
 
   get fc() {
-    return this.postForm!.controls;
+    return this.postForm.controls;
   }
 
   onTitleChanged($event: any) {
@@ -57,19 +57,19 @@ export class NewPostComponent {
 
   onSubmit() {
 
-    let splitted = this.postForm!.value.category.split('-');
+    let splitted = this.postForm.value.category.split('-');
     console.log(splitted);
 
     const postData: Post = {
-      title: this.postForm!.value.title,
-      permalink: this.postForm!.value.permalink,
+      title: this.postForm.value.title,
+      permalink: this.postForm.value.permalink,
       category: {
         categoryId: splitted[0],
         categoryName: splitted[1]
       },
       postImgPath: '',
-      excerpt: this.postForm!.value.excerpt,
-      content: this.postForm!.value.content,
+      excerpt: this.postForm.value.excerpt,
+      content: this.postForm.value.content,
       isFeatured: false,
       views: 0,
       status: 'new',
@@ -77,7 +77,7 @@ export class NewPostComponent {
     };
 
     this.postService.uploadImage(this.selectedImg, postData);
-    this.postForm!.reset();
+    this.postForm.reset();
     this.imgSrc = './assets/placeholder-image.jpeg';
   }
 
