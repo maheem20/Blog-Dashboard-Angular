@@ -19,33 +19,36 @@ export class NewPostComponent {
 
   postForm: FormGroup
 
+
+  formStatus: string = 'Add New';
+
   constructor(
     private categoriesService: CategoriesService,
     private fb: FormBuilder,
     private postService: PostsService,
     private router: ActivatedRoute
-    ) {
+  ) {
 
-      this.router.queryParams.subscribe(val => {
-        
-        this.postService.loadOneData(val.id).subscribe(post => {
+    this.router.queryParams.subscribe(val => {
 
-          this.post = post;
-          
-          this.postForm = this.fb.group({
-            title: [this.post.title, [Validators.required, Validators.minLength(10)]],
-            permalink: [this.post.permalink, Validators.required],
-            excerpt: [this.post.excerpt, [Validators.required, Validators.minLength(50)]],
-            category: [`${this.post.category.categoryId}-${this.post.category.category}`, Validators.required],
-            postImg: ['', Validators.required],
-            content: [this.post.content, Validators.required]
-          });
+      this.postService.loadOneData(val.id).subscribe(post => {
 
-          this.imgSrc = this.post.postImgPath;
+        this.post = post;
 
+        this.postForm = this.fb.group({
+          title: [this.post.title, [Validators.required, Validators.minLength(10)]],
+          permalink: [this.post.permalink, Validators.required],
+          excerpt: [this.post.excerpt, [Validators.required, Validators.minLength(50)]],
+          category: [`${this.post.category.categoryId}-${this.post.category.category}`, Validators.required],
+          postImg: ['', Validators.required],
+          content: [this.post.content, Validators.required]
         });
 
+        this.imgSrc = this.post.postImgPath;
+
       });
+
+    });
 
     this.postForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(10)]],
