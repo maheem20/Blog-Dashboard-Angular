@@ -19,6 +19,7 @@ export class NewPostComponent {
 
   postForm: FormGroup
 
+  post: any;
 
   formStatus: string = 'Add New';
 
