@@ -109,7 +109,7 @@ export class NewPostComponent implements OnInit {
       createdAt: new Date()
     };
 
-    this.postService.uploadImage(this.selectedImg, postData);
+    this.postService.uploadImage(this.selectedImg, postData, this.formStatus, this.docId);
     this.postForm.reset();
     this.imgSrc = './assets/placeholder-image.jpeg';
   }
