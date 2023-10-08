@@ -32,7 +32,7 @@ export class NewPostComponent implements OnInit {
 
     this.router.queryParams.subscribe(val => {
 
-      this.postService.loadOneData(val.id).subscribe(post => {
+      this.postService.loadOneData(val['id']).subscribe(post => {
 
         this.post = post;
 
