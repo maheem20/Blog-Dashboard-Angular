@@ -23,6 +23,8 @@ export class NewPostComponent implements OnInit {
 
   formStatus: string = 'Add New';
 
+  docId: string = '';
+
   constructor(
     private categoriesService: CategoriesService,
     private fb: FormBuilder,
