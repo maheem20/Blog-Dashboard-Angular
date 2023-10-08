@@ -17,7 +17,7 @@ export class PostsService {
     private router: Router
   ) { }
 
-  uploadImage(selectedImage: any, postData: any) {
+  uploadImage(selectedImage: any, postData: any, formStatus: string, id: any) {
     const filePath = `postIMG/${Date.now()}`;
     console.log(filePath);
 
@@ -28,7 +28,11 @@ export class PostsService {
         postData.postImgPath = URL;
         console.log(postData);
 
-        this.saveData(postData);
+        if (formStatus == 'Edit') {
+          this.updateData(id, postData);
+        } else {
+          this.saveData(postData);
+        }
       });
     });
   }
