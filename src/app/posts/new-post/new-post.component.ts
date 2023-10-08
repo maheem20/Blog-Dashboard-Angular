@@ -45,6 +45,7 @@ export class NewPostComponent {
         });
 
         this.imgSrc = this.post.postImgPath;
+        this.formStatus = 'Edit';
 
       });
 
