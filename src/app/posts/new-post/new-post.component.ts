@@ -34,6 +34,7 @@ export class NewPostComponent implements OnInit {
 
     this.router.queryParams.subscribe(val => {
 
+      this.docId = val['id'];
       this.postService.loadOneData(val['id']).subscribe(post => {
 
         this.post = post;
