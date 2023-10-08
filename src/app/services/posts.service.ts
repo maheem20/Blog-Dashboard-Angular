@@ -57,6 +57,9 @@ export class PostsService {
   }
 
   updateData(id: any, postData: Partial<unknown>) {
-    this.afs.doc(`posts/${id}`).update(postData)}
+    this.afs.doc(`posts/${id}`).update(postData).then(() => {
+      this.toastr.success('Post updated successfully!');
+    })
+  }
 
 }
