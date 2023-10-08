@@ -56,6 +56,7 @@ export class PostsService {
     return this.afs.collection(`posts/${id}`).doc(id).valueChanges();
   }
 
-  updateData(id: any, postData: Partial<unknown>) { }
+  updateData(id: any, postData: Partial<unknown>) {
+    this.afs.doc(`posts/${id}`).update(postData)}
 
 }
