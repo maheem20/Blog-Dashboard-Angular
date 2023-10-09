@@ -73,4 +73,10 @@ export class PostsService {
     })
   }
 
+  deleteImage(postImgPath: string, id: any) {
+    this.storage.storage.refFromURL(postImgPath).delete().then(() => {
+      this.deleteData(id);
+    });
+  }
+
 }
