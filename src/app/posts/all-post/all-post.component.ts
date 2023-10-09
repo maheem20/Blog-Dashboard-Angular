@@ -29,6 +29,7 @@ export class AllPostComponent implements OnInit {
     const featureData = {
       isFeatured: value
     }
+    this.postService.markFeatured(id, featureData);
   }
 
 }
