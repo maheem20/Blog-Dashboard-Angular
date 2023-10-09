@@ -25,4 +25,6 @@ export class AllPostComponent implements OnInit {
     this.postService.deleteImage(postImgPath, id);
   }
 
+  onFeatured(id: any, value: boolean) { }
+
 }
