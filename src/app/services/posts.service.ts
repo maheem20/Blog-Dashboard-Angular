@@ -67,4 +67,10 @@ export class PostsService {
     })
   }
 
+  deleteData(id: any) {
+    this.afs.doc(`posts/${id}`).delete().then(() => {
+      this.toastr.warning('Post deleted successfully!');
+    })
+  }
+
 }
