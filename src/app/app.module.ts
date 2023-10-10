@@ -11,6 +11,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule, } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -49,6 +50,7 @@ import { LoginComponent } from './auth/login/login.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
