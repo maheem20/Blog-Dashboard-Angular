@@ -44,7 +44,7 @@
                             <div class="alert alert-danger" *ngIf="Password.invalid && Password.touched">Password cannot be empty</div>
 
                         </div>
-                        <button class="btn btn-info btn-block btn-theme">Login</button>
+                        <button class="btn btn-info btn-block btn-theme" [disabled]="loginForm.invalid">Login</button>
 
                     </form>
 
