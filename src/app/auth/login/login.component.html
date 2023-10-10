@@ -23,7 +23,11 @@
                             #Email = "ngModel"
                             ngModel
                             required
+                            [ngClass]="{'is-invalid': Email.invalid && Email.touched}"
                             >
+
+                            <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">Email cannot be empty</div>
+
                         </div>
                         <div class="form-group">
                             <input
@@ -34,7 +38,11 @@
                             #Password = "ngModel"
                             ngModel
                             required
+                            [ngClass]="{'is-invalid': Password.invalid && Password.touched}"
                             >
+
+                            <div class="alert alert-danger" *ngIf="Password.invalid && Password.touched">Password cannot be empty</div>
+
                         </div>
                         <button class="btn btn-info btn-block btn-theme">Login</button>
 
