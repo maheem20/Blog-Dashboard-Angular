@@ -8,4 +8,6 @@ import { ToastrService } from 'ngx-toastr';
 export class AuthService {
 
   constructor(private afAuth: AngularFireAuth, private toastr: ToastrService) { }
+
+  login(email: string, password: string) {}
 }
