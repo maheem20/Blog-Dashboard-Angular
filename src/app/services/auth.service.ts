@@ -10,6 +10,8 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth, private toastr: ToastrService) { }
 
   login(email: string, password: string) {
-    this.afAuth.signInWithEmailAndPassword(email, password)
+    this.afAuth.signInWithEmailAndPassword(email, password).then(logRef => {
+      this.toastr.success('Login Successful');
+    });
   }
 }
