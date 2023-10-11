@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   loadUser() {
-    this.afAuth.authState.subscribe(user => {
+    this.afAuth.authState.subscribe((user: any) => {
       console.log(user);
     });
   }   
