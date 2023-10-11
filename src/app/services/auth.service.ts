@@ -22,7 +22,7 @@ export class AuthService {
 
   loadUser() {
     this.afAuth.authState.subscribe((user: any) => {
-      console.log(user);
+      console.log(JSON.parse(JSON.stringify(user)));
     });
   }   
 
