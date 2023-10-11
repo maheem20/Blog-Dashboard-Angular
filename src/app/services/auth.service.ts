@@ -18,4 +18,11 @@ export class AuthService {
       this.toastr.warning(e);
     });
   }
+
+  loadUser() {
+    this.afAuth.authState.subscribe(user => {
+      console.log(user);
+    });
+  }   
+
 }
