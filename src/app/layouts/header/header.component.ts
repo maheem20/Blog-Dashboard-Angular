@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  userEmail: string | undefined;
+
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.userEmail = JSON.parse(localStorage.getItem('user')).email;
   }
 
 }
