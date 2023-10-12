@@ -24,6 +24,13 @@ export class AuthService {
     this.afAuth.authState.subscribe((user: any) => {
       localStorage.setItem('user', JSON.stringify(user));
     });
-  }   
+  }
+
+  logout() {
+    this.afAuth.signOut().then(() => {
+      this.toastr.success('Logout Successful');
+      this.router.navigate(['/login']);
+    });
+  }
 
 }
