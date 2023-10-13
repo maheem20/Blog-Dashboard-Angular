@@ -20,6 +20,7 @@ export class AuthService {
       this.loadUser();
 
       this.loggedIn.next(true);
+      this.isLoggedInGuard = true;
 
       this.router.navigate(['/']);
     }).catch((e: any) => {
