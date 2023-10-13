@@ -39,6 +39,7 @@ export class AuthService {
       localStorage.removeItem('user');
 
       this.loggedIn.next(false);
+      this.isLoggedInGuard = false;
 
       this.router.navigate(['/login']);
     });
