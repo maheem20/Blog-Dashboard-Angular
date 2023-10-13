@@ -17,6 +17,7 @@ export class AuthService {
     this.afAuth.signInWithEmailAndPassword(email, password).then(logRef => {
       this.toastr.success('Login Successful');
       this.loadUser();
+      this.loggedIn.next(true);
       this.router.navigate(['/']);
     }).catch((e: any) => {
       this.toastr.warning(e);
