@@ -17,7 +17,9 @@ export class AuthService {
     this.afAuth.signInWithEmailAndPassword(email, password).then(logRef => {
       this.toastr.success('Login Successful');
       this.loadUser();
+
       this.loggedIn.next(true);
+      
       this.router.navigate(['/']);
     }).catch((e: any) => {
       this.toastr.warning(e);
@@ -34,7 +36,9 @@ export class AuthService {
     this.afAuth.signOut().then(() => {
       this.toastr.success('Logout Successful');
       localStorage.removeItem('user');
+
       this.loggedIn.next(false);
+
       this.router.navigate(['/login']);
     });
   }
