@@ -8,6 +8,11 @@ export const authGuard: CanActivateFn = (route, state) => {
   mapToCanActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | UrlTree | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+    
+      if (this.authService.isLoggedIn()) {
+        return true;
+      } else {
+        return false;
+      }
   }
 };
