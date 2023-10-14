@@ -9,7 +9,7 @@ export const authGuard: CanActivateFn = (route, state) => {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | UrlTree | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      if (this.authService.isLoggedIn()) {
+      if (this.authService.isLoggedInGuard) {
         return true;
       } else {
         return false;
