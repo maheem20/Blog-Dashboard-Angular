@@ -1,9 +1,13 @@
-import { CanActivateFn } from '@angular/router';
+import { CanActivateFn, mapToCanActivate } from '@angular/router';
 import { AuthService } from './auth.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
 
   constructor(private authService: AuthService) {}
 
-  return true;
+  mapToCanActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean> | UrlTree | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return true;
+  }
 };
