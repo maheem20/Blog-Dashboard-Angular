@@ -20,6 +20,7 @@ export class AuthGuard implements CanActivate {
       return true;
     } else {
       console.log('Access Denied ...');
+      this.router.navigate(['/login']);
       return false;
     }
   }
