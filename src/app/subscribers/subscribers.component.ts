@@ -20,4 +20,8 @@ export class SubscribersComponent implements OnInit {
 
   }
 
+  onDelete(id: any) {
+    this.subService.deleteData(id);
+  }
+
 }
